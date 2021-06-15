@@ -1,0 +1,72 @@
+# npm resolution error report
+
+2021-06-11T05:00:54.095Z
+
+While resolving: PlatziVideo@1.0.0
+Found: eslint@6.8.0
+node_modules/eslint
+  eslint@"^6.8.0" from the root project
+
+Could not resolve dependency:
+peer eslint@"^4.19.1 || ^5.3.0" from eslint-config-airbnb@17.1.1
+node_modules/eslint-config-airbnb
+  eslint-config-airbnb@"^17.1.1" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force, or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
+
+Raw JSON explanation object:
+
+{
+  "code": "ERESOLVE",
+  "current": {
+    "name": "eslint",
+    "version": "6.8.0",
+    "whileInstalling": {
+      "name": "PlatziVideo",
+      "version": "1.0.0",
+      "path": "F:\\Cursos Programación\\Platzi\\Escuela de JavaScript\\12. Curso de Server Side Render con Express\\PlatziVideo"
+    },
+    "location": "node_modules/eslint",
+    "dependents": [
+      {
+        "type": "prod",
+        "name": "eslint",
+        "spec": "^6.8.0",
+        "from": {
+          "location": "F:\\Cursos Programación\\Platzi\\Escuela de JavaScript\\12. Curso de Server Side Render con Express\\PlatziVideo"
+        }
+      }
+    ]
+  },
+  "edge": {
+    "type": "peer",
+    "name": "eslint",
+    "spec": "^4.19.1 || ^5.3.0",
+    "error": "INVALID",
+    "from": {
+      "name": "eslint-config-airbnb",
+      "version": "17.1.1",
+      "whileInstalling": {
+        "name": "PlatziVideo",
+        "version": "1.0.0",
+        "path": "F:\\Cursos Programación\\Platzi\\Escuela de JavaScript\\12. Curso de Server Side Render con Express\\PlatziVideo"
+      },
+      "location": "node_modules/eslint-config-airbnb",
+      "dependents": [
+        {
+          "type": "prod",
+          "name": "eslint-config-airbnb",
+          "spec": "^17.1.1",
+          "from": {
+            "location": "F:\\Cursos Programación\\Platzi\\Escuela de JavaScript\\12. Curso de Server Side Render con Express\\PlatziVideo"
+          }
+        }
+      ]
+    }
+  },
+  "peerConflict": null,
+  "strictPeerDeps": false,
+  "force": false
+}

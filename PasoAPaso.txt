@@ -1,0 +1,7 @@
+1. Inicializar repositorio: git init
+
+2. Guardar archivos y cambios en el repositorio: git remote add origin https://github.com/Manuelowsky/projectAutenticationPasswordjs.git
+                                       git status 
+                                       git add .
+                                       git commit -m "Agregando archivos"
+                                       git push origin master

@@ -1,0 +1,29 @@
+Express: framework de node para crear servidores HTTP.
+
+dotenv: paquete para cargar variables de entorno.
+
+Nodemon: paquete para reiniciar el servidor automáticamente ante cada cambio.
+
+ESlint: herramienta para identificar e informar sobre patrones encontrados en código ECMAScript / JavaScript.
+
+Prettier: formateador de código.
+
+Moockaru: sitio para crear mocks.
+
+MongoDB: base de datos NoSQL basada en documentos.
+
+Joi: paquete para validar datos.
+
+Boom: paquete para imprimir errores en peticiones HTTP de forma más amigable.
+
+mocha: paquete para correr tests.
+
+supertest: paquete para levantar servidores temporales para tests.
+
+sinon: paquete para crear mocks para tests.
+
+proxyquire: paquete para inyectar mocks.
+
+nyc: paquete para hacer un coverage de los tests.
+
+Vercel: sitio para el despliegue de la aplicación
