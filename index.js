@@ -1,5 +1,7 @@
 //Importando express
 const express = require('express');
+//Importando helmet
+const helmet = require('helmet');
 
 const app = express();
 
@@ -8,6 +10,8 @@ const { config } = require('./config/index');
 
 //Importando el archivo de las rutas
 const moviesApi = require('./routes/movies');
+const userMoviesApi = require('./routes/userMovies');
+const authApi = require('./routes/auth');
 
 //Importando middleware de errores
 const { logErrors, errorHandler, wrapErrors } = require('./utils/middleware/errorHandlers.js');
@@ -17,9 +21,13 @@ const notFoundHandler = require('./utils/middleware/notFoundHandler.js');
 
 //Body parser
 app.use(express.json());
+app.use(helmet());
 
 //Enviamos a la función moviesApi la app de express (rutas)
+authApi(app);
 moviesApi(app);
+userMoviesApi(app);
+
 //Capturando error 404 despues de pasar por todas las rutas
 app.use(notFoundHandler);
 

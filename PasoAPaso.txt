@@ -1,7 +1,166 @@
 1. Inicializar repositorio: git init
 
-2. Guardar archivos y cambios en el repositorio: git remote add origin https://github.com/Manuelowsky/projectAutenticationPasswordjs.git
+2. Guardar archivos y cambios en el repositorio: git remote add origin https://github.com/Manuelowsky/projectAutenticationPasswordjs
                                        git status 
                                        git add .
                                        git commit -m "Agregando archivos"
                                        git push origin master
+
+/* Agregando esquema de los usuarios y servicio de los usuarios */
+
+3. Crear el archivo del esquema User: utils/schemas/users.js                          
+
+4. Instalar la libreria bcrypt: npm i bcrypt
+
+5. Crear el archivo del servicio User: services/users.js
+
+/* Agregando la colección de peliculas de usuario */
+
+6. Crear el archivo del esquema userMovies: utils/schemas/userMovies.js
+
+7. Crear el archivo del servicio userMovies: services/userMovies.js
+
+8. Crear la el archivo de rutas userMovies: routes/userMovies.js
+
+/* Configuración de Passport JS */
+
+9. Connectarnos a la BD de mongo a traves de Compass
+
+10. Instalar las dependencias necesarias: npm i passport jsonwebtoken passport-http passport-jwt
+
+11. Instalar la dependencia para pintar colores en la terminal: npm i -D chalk
+
+12. Agregar algunas variables de entorno en el archivo .env y .env.example
+
+13. Crear la carpeta scripts: scripts
+
+14. Crear la carpeta mongo: scripts/mongo
+
+15. Crear los archivos: scripts/mongo/seedApiKeys.js, seedMovies.js, seedUsers.js
+
+16. Ir a la coleccion de api-keys en la BD, copiar el token del key admin y key user,
+    copiarlos los valores en sus respectivas claves en el archivo .env
+
+/* Implementación de BasicStrategy, Strategy y  ExtractJwt con Passport.js */    
+
+17. Crear las carpetas: utils/auth/strategies
+
+18. Crear el archivo: utils/auth/strategies/basic.js
+
+19. Crear el archivo: utils/auth/strategies/jwt.js
+
+/* Implementación del Sign-In y Sign-Up*/
+
+20. Crear el archivo: services/apiKeys.js
+
+21. Crear la ruta: routes/auth.js
+
+/* Proteger rutas con Passport.js */
+
+22. Dirigirnos a los archivo de routes y hacer uso de la estrategia de jwt
+
+/*  Middleware para validar los scopes de las rutas */
+
+23. Crear el archivo: utils/middleware/scopesValidationHandler.js
+
+(CARPETA SSR-SERVER)
+/* Configuración del server render y Comunicación máquina a máquina */
+
+24. Agregar la carpeta: ssr-server y el archivo .env
+
+25. Crear las carpetas: ssr-server/utils/auth/strategies
+
+26. Crear el archivo: ssr-server/utils/auth/strategies/basic.js
+
+27. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+28. Validar en postman
+
+/*
+    Hasta aca aprendimos a:
+
+    -> Configuración de nuestro proyecto
+    -> Configuración de Passport.js
+    -> Implementación de estrategias en Passport.js
+    -> Implementación de nuestro Sign-in y Sign-up
+    -> Protegiendo nuestras rutas con Passport.js
+    -> Implementando recordar sesión
+    -> Comunicación máquina a máquina
+*/
+
+/* Implementando OAuth2.0 con Google */
+
+29. Agregar GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET en el .env, .env.example y config
+
+30. Implementar las dependencias: npm i passport-oauth
+
+31. Crear el archivo: utils/auth/strategies/oauth.js
+
+(CARPETA PROJECT-MOVIES-API)
+/* Implementando Sign Provider en nuestra API */
+
+32. Crear un nuevo método en el archivo getOrCreateUser: users.js
+
+33. Modificar esquema de users.js
+
+34. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+35. Ir a la ruta e ingresar con una cuenta google: http://localhost:8000/auth/google-oauth
+
+(CARPETA SSR-SERVER)
+/* Implementando OpenID Connect para autenticar con Google (Más sencilla que usando OAuth2.O) */
+
+36. Instalar la dependencia: npm install passport-google-oauth
+
+37. Crear el archivo: utils/auth/strategies/google.js
+
+38. Agregar en las credenciales la URI: http://localhost:8000/auth/google/callback
+
+39. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+40. Ir a la ruta e ingresar con una cuenta google: http://localhost:8000/auth/google
+
+/* Implementando autenticación con Twitter */
+
+41. Agregar TWITTER_CONSUMER_KEY y TWITTER_CONSUMER_SECRET en el .env, .env.example y config
+
+42. Crear el archivo: utils/auth/strategies/twitter.js
+
+43. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+44. Ir a la ruta e ingresar con una cuenta google: http://localhost:8000/auth/twitter
+
+/* Implementando autenticación con Linkedin */
+
+45. Instalar la dependencia: npm install @sokratis/passport-linkedin-oauth2
+
+46. Agregar LINKEDIN_CLIENT_ID y LINKEDIN_CLIENT_SECRET en el .env, .env.example y config
+
+47. Crear el archivo: utils/auth/strategies/linkedin.js
+
+48. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+49. Ir a la ruta e ingresar con una cuenta google: http://localhost:8000/auth/linkedin
+
+/* Implementando autenticación con Facebook */
+
+50. Instalar la dependencia: npm install passport-facebook
+
+51. Agregar FACEBOOK_CLIENT_ID y FACEBOOK_CLIENT_SECRET en el .env, .env.example y config
+
+52. Crear el archivo: utils/auth/strategies/facebook.js
+
+53. Levantar el Apiserver y el ssr-server: npm run dev (Abrir dos terminales)
+
+54. Ir a la ruta e ingresar con una cuenta google: http://localhost:8000/auth/facebook
+
+/* Estrategias para asegurar la aplicación en Express */
+
+(CARPETA PROJECT-MOVIES-API y SSR-SERVER)
+55. Instalar la dependencia helmet: npm i helmet
+
+56. Importarla y instanciarla en los index.js
+
+57. Identificar vulnerabilidades: npm audit
+
+58. Arreglar las vulnerabilidades: npm audit fix

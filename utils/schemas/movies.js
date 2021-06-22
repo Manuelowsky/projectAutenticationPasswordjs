@@ -1,3 +1,4 @@
+//Importar joi para definir el esquema
 const joi = require('@hapi/joi');
 
 //Esquemas individuales
